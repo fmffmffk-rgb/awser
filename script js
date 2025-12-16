@@ -1,0 +1,40 @@
+// بيانات تجريبية
+const jobsData = [
+    {
+        id: 1,
+        title: "مطور برمجيات",
+        company: "شركة التقنية المتطورة",
+        location: "الرياض",
+        salary: "15,000 - 20,000 ر.س",
+        type: "دوام كامل",
+        category: "it",
+        experience: "3+ سنوات",
+        postedDate: "2024-01-15",
+        description: "نبحث عن مطور برمجيات متمرس لتطوير أنظمة إدارة علاقات العملاء.",
+        requirements: ["خبرة في React.js", "معرفة بـ Node.js", "إجادة Git"]
+    },
+    {
+        id: 2,
+        title: "مصمم جرافيك",
+        company: "وكالة الإبداع الرقمي",
+        location: "جدة",
+        salary: "10,000 - 14,000 ر.س",
+        type: "دوام كامل",
+        category: "design",
+        experience: "2+ سنوات",
+        postedDate: "2024-01-14",
+        description: "مصمم جرافيك مبدع للانضمام إلى فريق التصميم لدينا.",
+        requirements: ["إجادة Adobe Creative Suite", "خبرة في تصميم UI/UX", "محفظة أعمال قوية"]
+    },
+    {
+        id: 3,
+        title: "مدير مشاريع",
+        company: "مجموعة الأعمال الدولية",
+        location: "الدمام",
+        salary: "18,000 - 25,000 ر.س",
+        type: "دوام كامل",
+        category: "management",
+        experience: "5+ سنوات",
+        postedDate: "2024-01-13",
+        description: "إدارة مشاريع التقنية وتنفيذها بنجاح ضمن الميزانية والجدول الزمني.",
+        requirements: ["شهادة PMP",
