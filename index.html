@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack Pro - نظام تتبع الوظائف</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-briefcase"></i>
+                <span>JobTrack Pro</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#features" class="nav-link">المميزات</a>
+                <a href="#jobs" class="nav-link">الوظائف</a>
+                <a href="#about" class="nav-link">عن النظام</a>
+                <a href="#contact" class="nav-link">اتصل بنا</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn btn-outline" onclick="showLoginModal()">تسجيل الدخول</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()">إنشاء حساب</button>
+            </div>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- قسم البطل -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">ابحث عن وظيفتك المثالية</h1>
+                <p class="hero-description">
+                    نظام متكامل للبحث عن الوظائف، تقدم بطلبك، وتتبع حالة طلباتك. 
+                    انضم إلى آلاف الباحثين عن العمل والشركات الناجحة.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="showRegisterModal()">
+                        <i class="fas fa-user-plus"></i> ابدأ الآن مجانًا
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="scrollToSection('#jobs')">
+                        <i class="fas fa-search"></i> تصفح الوظائف
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>+10,000 مستخدم</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-briefcase"></i>
+                        <span>+5,000 وظيفة</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-building"></i>
+                        <span>+500 شركة</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn.pixabay.com/photo/2021/01/29/08/10/male-5960129_1280.jpg" alt="Job Search">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار JobTrack Pro؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>بحث ذكي</h3>
+                    <p>ابحث عن الوظائف المناسبة باستخدام فلترات متقدمة حسب الموقع، الراتب، والتخصص.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>تقدم سريع</h3>
+                    <p>تقدم للوظائف بنقرة واحدة باستخدام سيرتك الذاتية المحفوظة مسبقًا.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>تتبع الطلبات</h3>
+                    <p>تتبع حالة طلباتك من لحظة التقديم حتى القبول النهائي.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>إشعارات فورية</h3>
+                    <p>احصل على إشعارات فورية عند توفر وظائف تناسب تخصصك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الوظائف -->
+    <section id="jobs" class="jobs">
+        <div class="container">
+            <h2 class="section-title">أحدث الوظائف المتاحة</h2>
+            <div class="jobs-filter">
+                <input type="text" id="searchJob" placeholder="ابحث عن وظيفة..." class="search-input">
+                <select id="jobCategory" class="select-input">
+                    <option value="">جميع التخصصات</option>
+                    <option value="it">تكنولوجيا المعلومات</option>
+                    <option value="marketing">التسويق</option>
+                    <option value="finance">المالية</option>
+                    <option value="hr">الموارد البشرية</option>
+                </select>
+                <select id="jobLocation" class="select-input">
+                    <option value="">جميع المناطق</option>
+                    <option value="riyadh">الرياض</option>
+                    <option value="jeddah">جدة</option>
+                    <option value="dammam">الدمام</option>
+                    <option value="remote">عن بُعد</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchJobs()">
+                    <i class="fas fa-search"></i> بحث
+                </button>
+            </div>
+            <div class="jobs-grid" id="jobsList">
+                <!-- سيتم تحميل الوظائف بواسطة JavaScript -->
+            </div>
+            <div class="text-center">
+                <button class="btn btn-outline" onclick="loadMoreJobs()">
+                    <i class="fas fa-plus"></i> تحميل المزيد
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن النظام -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">عن JobTrack Pro</h2>
+                    <p>
+                        JobTrack Pro هو نظام متكتمل تم تطويره لتسهيل عملية البحث عن الوظائف 
+                        وإدارة طلبات التوظيف. نحن نربط بين الباحثين عن العمل وأصحاب العمل 
+                        بطرق مبتكرة وفعالة.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>سهولة الاستخدام</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>أمان عالي</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>دعم فني 24/7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تسجيل الدخول -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تسجيل الدخول</h3>
+                <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">البريد الإلكتروني</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">كلمة المرور</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> تذكرني
+                        </label>
+                        <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول</button>
+                </form>
+                <div class="modal-footer">
+                    <p>ليس لديك حساب؟ <a href="#" onclick="showRegisterModal()">أنشئ حسابًا جديدًا</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- التسجيل -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>إنشاء حساب جديد</h3>
+                <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="userType">نوع الحساب</label>
+                        <select id="userType" required>
+                            <option value="">اختر نوع الحساب</option>
+                            <option value="job_seeker">باحث عن عمل</option>
+                            <option value="employer">صاحب عمل</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">الاسم الكامل</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">البريد الإلكتروني</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">كلمة المرور</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">تأكيد كلمة المرور</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div id="employerFields" style="display: none;">
+                        <div class="form-group">
+                            <label for="companyName">اسم الشركة</label>
+                            <input type="text" id="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">المجال</label>
+                            <input type="text" id="industry">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required> أوافق على <a href="#">الشروط والأحكام</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">إنشاء حساب</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <i class="fas fa-briefcase"></i>
+                        <span>JobTrack Pro</span>
+                    </div>
+                    <p>نظام متكامل لإدارة وتتبع الوظائف. ربط المواهب بالفرص المناسبة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#jobs">الوظائف</a></li>
+                        <li><a href="#about">عن النظام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>القوانين</h4>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>اتصل بنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، السعودية</li>
+                        <li><i class="fas fa-phone"></i> +966 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@jobtrackpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobTrack Pro. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
